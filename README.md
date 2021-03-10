@@ -4,7 +4,7 @@ _a simple image hosting service_
 ## Usage
 ### Running
 ```
-pict-rs 0.2.0-alpha.3
+pict-rs 0.2.6
 
 USAGE:
     pict-rs [FLAGS] [OPTIONS] --path <path>
@@ -53,6 +53,11 @@ $ sudo chown -R 991:991 volumes/pictrs
 $ wget https://git.asonix.dog/asonix/pict-rs/raw/branch/master/docker/prod/docker-compose.yml
 $ sudo docker-compose up -d
 ```
+
+###### Note
+- pict-rs makes use of the system's temporary folder. This is generally `/tmp` on linux
+- pict-rs makes use of a default imagemagick security policy at
+    `/usr/local/lib/ImageMagick-$VERSION/config-Q16HDRI/policy.xml`
 
 #### Docker Development
 The development system loads a rust environment inside a docker container with the neccessary

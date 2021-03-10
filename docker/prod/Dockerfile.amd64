@@ -219,6 +219,8 @@ ENV \
 RUN \
  chown pictrs:pictrs /mnt
 
+COPY root/ /
+
 VOLUME /mnt
 WORKDIR /opt/pict-rs
 USER pictrs

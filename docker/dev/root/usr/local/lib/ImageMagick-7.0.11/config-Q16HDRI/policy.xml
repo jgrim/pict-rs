@@ -1,0 +1,23 @@
+<policymap>
+    <policy domain="resource" name="memory" value="256MiB" />
+    <policy domain="resource" name="list-length" value="32" />
+    <policy domain="resource" name="width" value="10KP" />
+    <policy domain="resource" name="height" value="10KP" />
+    <policy domain="resource" name="map" value="512MiB" />
+    <policy domain="resource" name="area" value="16KP" />
+    <policy domain="resource" name="disk" value="1GiB" />
+    <policy domain="resource" name="file" value="768" />
+    <policy domain="resource" name="thread" value="2" />
+    <policy domain="coder" rights="none" pattern="*" />
+    <policy domain="coder" rights="read | write" pattern="{GIF,JPEG,PNG,WEBP}" />
+    <policy domain="filter" rights="none" pattern="*" />
+    <policy domain="path" rights="none" pattern="@*" />
+    <policy domain="delegate" rights="none" pattern="*" />
+    <policy domain="module" rights="none" pattern="*" />
+    <policy domain="module" rights="read | write" pattern="{GIF,JPEG,PNG,WEBP}" />
+        <!-- indirect reads not permitted -->
+    <policy domain="cache" name="memory-map" value="anonymous" />
+    <policy domain="cache" name="synchronize" value="true" />
+    <policy domain="system" name="precision" value="6" />
+    <policy domain="system" name="shred" value="1" />
+</policymap>

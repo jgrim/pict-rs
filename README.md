@@ -9,7 +9,7 @@ _a simple image hosting service_
 ## Usage
 ### Running
 ```
-pict-rs 0.3.0
+pict-rs 0.3.1
 
 USAGE:
     pict-rs [FLAGS] [OPTIONS] [SUBCOMMAND]
@@ -56,7 +56,7 @@ SUBCOMMANDS:
 ```
 
 ```
-pict-rs-file-store 0.3.0
+pict-rs-file-store 0.3.1
 
 USAGE:
     pict-rs file-store [OPTIONS]
@@ -70,7 +70,7 @@ OPTIONS:
 ```
 
 ```
-pict-rs-s3-store 0.3.0
+pict-rs-s3-store 0.3.1
 
 USAGE:
     pict-rs s3-store [OPTIONS] --bucket-name <bucket-name> --region <region>

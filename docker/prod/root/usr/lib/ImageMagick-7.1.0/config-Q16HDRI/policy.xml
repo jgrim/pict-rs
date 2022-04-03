@@ -15,7 +15,7 @@
     <policy domain="delegate" rights="execute" pattern="ffmpeg" />
     <policy domain="filter" rights="none" pattern="*" />
     <policy domain="module" rights="none" pattern="*" />
-    <policy domain="module" rights="read | write" pattern="{GIF,JPEG,PNG,WEBP,TMP,PAM,VIDEO}" />
+    <policy domain="module" rights="read | write" pattern="{GIF,JPEG,PNG,WEBP,TMP,PAM,PNM,VIDEO}" />
         <!-- indirect reads not permitted -->
     <policy domain="system" name="precision" value="6" />
 </policymap>

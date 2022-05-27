@@ -1,14 +1,14 @@
 ## Required: path to store pict-rs database
-# environment variable: PICTRS_PATH
+# environment variable: PICTRS__PATH
 path = './data'
 
 ## Optional: pict-rs binding address
-# environment variable: PICTRS_ADDR
+# environment variable: PICTRS__ADDR
 # default: 0.0.0.0:8080
 addr = '0.0.0.0:8080'
 
 ## Optional: format to transcode all uploaded images
-# environment variable: PICTRS_IMAGE_FORMAT
+# environment variable: PICTRS__IMAGE_FORMAT
 # valid options: 'jpeg', 'png', 'webp'
 # default: empty
 #
@@ -17,7 +17,7 @@ addr = '0.0.0.0:8080'
 image_format = 'jpeg'
 
 ## Optional: permitted image processing filters
-# environment variable: PICTRS_FILTERS
+# environment variable: PICTRS__FILTERS
 # valid options: 'identity', 'thumbnail', 'resize', 'crop', 'blur'
 # default: empty
 #
@@ -25,33 +25,33 @@ image_format = 'jpeg'
 filters = ['identity', 'thumbnail', 'resize', 'crop', 'blur']
 
 ## Optional: image bounds
-# environment variable: PICTRS_MAX_FILE_SIZE
+# environment variable: PICTRS__MAX_FILE_SIZE
 # default: 40
 max_file_size = 40 # in Megabytes
-# environment variable: PICTRS_MAX_IMAGE_WIDTH
+# environment variable: PICTRS__MAX_IMAGE_WIDTH
 # default: 10,000
 max_image_width = 10_000 # in Pixels
-# environment variable: PICTRS_MAX_IMAGE_HEIGHT
+# environment variable: PICTRS__MAX_IMAGE_HEIGHT
 # default: 10,000
 max_image_height = 10_000 # in Pixels
-# environment variable: PICTRS_MAX_IMAGE_AREA
+# environment variable: PICTRS__MAX_IMAGE_AREA
 # default: 40,000,000
 max_image_area = 40_000_000 # in Pixels
 
 ## Optional: skip image validation on the import endpoint
-# environment variable: PICTRS_SKIP_VALIDATE_IMPORTS
+# environment variable: PICTRS__SKIP_VALIDATE_IMPORTS
 # default: false
 skip_validate_imports = false
 
 ## Optional: set sled's cache capacity to a given number of bytes
-# environment variable: PICTRS_SLED_CACHE_CAPACITY
+# environment variable: PICTRS__SLED_CACHE_CAPACITY
 # default: 67_108_864 (1024 * 1024 * 64) e.g. 64MB
 #
 # Increasing this value can improve performance by keeping more of the database in RAM
 sled_cache_capacity = 67_108_864 # in bytes
 
 ## Optional: enable tokio-console and set the event buffer size
-# environment variable: PICTRS_CONSOLE_BUFFER_CAPACITY
+# environment variable: PICTRS__CONSOLE_BUFFER_CAPACITY
 # default: empty
 #
 # NOTE: this is the number of _events_ to buffer, not the number of bytes. In reality, the amount of
@@ -82,14 +82,14 @@ sled_cache_capacity = 67_108_864 # in bytes
 console_buffer_capacity = 102_400 # 102_400 (or 1024 * 100) is the default size used by console-subscriber
 
 ## Optional: shared secret for internal endpoints
-# environment variable: PICTRS_API_KEY
+# environment variable: PICTRS__API_KEY
 # default: empty
 #
 # Not specifying api_key disables internal endpoints
 api_key = 'API_KEY'
 
 ## Optional: url for exporting otlp traces
-# environment variable: PICTRS_OPENTELEMETRY_URL
+# environment variable: PICTRS__OPENTELEMETRY_URL
 # default: empty
 #
 # Not specifying opentelemetry_url means no traces will be exported
@@ -105,11 +105,11 @@ type = "file_store"
 ## Example file store
 # [store]
 #
-# # environment variable: PICTRS_STORE__TYPE
+# # environment variable: PICTRS__STORE__TYPE
 # type = 'file_store'
 #
 # # Optional: file path
-# # environment variable: PICTRS_STORE__PATH
+# # environment variable: PICTRS__STORE__PATH
 # # default: empty
 # #
 # # Not specifying path means pict-rs' top-level `path` config is used
@@ -118,35 +118,35 @@ type = "file_store"
 ## Example s3 store
 # [store]
 #
-# # environment variable: PICTRS_STORE__TYPE
+# # environment variable: PICTRS__STORE__TYPE
 # type = 's3_store'
 #
 # # Required: bucket name
-# # environment variable: PICTRS_STORE__BUCKET_NAME
+# # environment variable: PICTRS__STORE__BUCKET_NAME
 # bucket_name = 'rust_s3'
 #
 # # Required: bucket region
-# # environment variable: PICTRS_STORE__REGION
+# # environment variable: PICTRS__STORE__REGION
 # #
 # # can also be endpoint of local s3 store, e.g. 'http://minio:9000'
 # region = 'eu-central-1'
 #
 # # Optional: bucket access key
-# # environment variable: PICTRS_STORE__ACCESS_KEY
+# # environment variable: PICTRS__STORE__ACCESS_KEY
 # # default: empty
 # access_key = 'ACCESS_KEY'
 #
 # # Optional: bucket secret key
-# # environment variable: PICTRS_STORE__SECRET_KEY
+# # environment variable: PICTRS__STORE__SECRET_KEY
 # # default: empty
 # secret_key = 'SECRET_KEY'
 #
 # # Optional: bucket security token
-# # environment variable: PICTRS_STORE__SECURITY_TOKEN
+# # environment variable: PICTRS__STORE__SECURITY_TOKEN
 # # default: empty
 # security_token = 'SECURITY_TOKEN'
 #
 # # Optional: bucket session token
-# # environment variable: PICTRS_STORE__SESSION_TOKEN
+# # environment variable: PICTRS__STORE__SESSION_TOKEN
 # # default: empty
 # session_token = 'SESSION_TOKEN'

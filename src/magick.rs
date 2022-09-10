@@ -180,7 +180,7 @@ where
     parse_details(s)
 }
 
-pub(crate) async fn details_file(path_str: &str) -> Result<Details, Error> {
+async fn details_file(path_str: &str) -> Result<Details, Error> {
     let process = Process::run(
         "magick",
         &["identify", "-ping", "-format", "%w %h | %m\n", path_str],

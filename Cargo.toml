@@ -42,7 +42,7 @@ reqwest = { version = "0.11.5", default-features = false, features = [
   "rustls-tls",
   "stream",
 ], optional = true }
-rust-s3 = { version = "0.29.0", default-features = false, features = [
+rust-s3 = { version = "0.31.0", default-features = false, features = [
   "fail-on-err",
   "with-reqwest",
 ], optional = true, git = "https://github.com/asonix/rust-s3", branch = "asonix/generic-client" }
@@ -68,10 +68,10 @@ tracing-subscriber = { version = "0.3.0", features = [
   "tracing-log",
 ] }
 url = { version = "2.2", features = ["serde"] }
-uuid = { version = "0.8.2", features = ["v4", "serde"] }
+uuid = { version = "1.1.2", features = ["v4", "serde"] }
 
 [dependencies.tracing-actix-web]
-version = "0.5.0"
+version = "0.6.0"
 default-features = false
 features = ["emit_event_on_error", "opentelemetry_0_17"]
 

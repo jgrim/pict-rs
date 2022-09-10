@@ -2,7 +2,8 @@ use crate::store::Store;
 use actix_web::web::Bytes;
 use futures_util::stream::Stream;
 use s3::{
-    client::Client, command::Command, creds::Credentials, request_trait::Request, Bucket, Region,
+    client::Client, command::Command, creds::Credentials, error::S3Error, request_trait::Request,
+    Bucket, Region,
 };
 use std::{
     pin::Pin,
@@ -30,6 +31,9 @@ pub(crate) enum ObjectError {
 
     #[error(transparent)]
     Utf8(#[from] FromUtf8Error),
+
+    #[error(transparent)]
+    Upstream(#[from] S3Error),
 
     #[error("Invalid length")]
     Length,
@@ -171,7 +175,7 @@ impl ObjectStore {
         Ok(ObjectStore {
             path_gen,
             settings_tree,
-            bucket: Bucket::new_with_path_style(
+            bucket: Bucket::new(
                 bucket_name,
                 match region {
                     Region::Custom { endpoint, .. } => Region::Custom {
@@ -186,7 +190,8 @@ impl ObjectStore {
                     security_token,
                     session_token,
                 },
-            )?,
+            )?
+            .with_path_style(),
             client,
         })
     }

@@ -46,7 +46,7 @@ impl SledDb for sled034::Db {
     }
 
     fn self_tree(&self) -> &Self::SledTree {
-        &*self
+        self
     }
 }
 

@@ -114,7 +114,7 @@ impl Drop for CancelToken {
     fn drop(&mut self) {
         if self.receiver.is_none() {
             let completed = PROCESS_MAP.remove(&self.path).is_none();
-            self.span.record("completed", &completed);
+            self.span.record("completed", completed);
         }
     }
 }

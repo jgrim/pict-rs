@@ -212,8 +212,8 @@ where
                     if let Ok(err) = res {
                         let display = format!("{}", err);
                         let debug = format!("{:?}", err);
-                        span.record("exception.message", &display.as_str());
-                        span.record("exception.details", &debug.as_str());
+                        span.record("exception.message", display.as_str());
+                        span.record("exception.details", debug.as_str());
                         return Poll::Ready(Err(err));
                     }
                 }
@@ -223,8 +223,8 @@ where
                 if let Err(err) = &res {
                     let display = format!("{}", err);
                     let debug = format!("{:?}", err);
-                    span.record("exception.message", &display.as_str());
-                    span.record("exception.details", &debug.as_str());
+                    span.record("exception.message", display.as_str());
+                    span.record("exception.details", debug.as_str());
                 }
                 return Poll::Ready(res);
             }

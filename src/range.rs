@@ -17,7 +17,7 @@ pub(crate) fn chop_bytes(
     if let Some((start, end)) = byte_range.to_satisfiable_range(length) {
         // END IS INCLUSIVE
         let end = end as usize + 1;
-        return Ok(once(ready(Ok(bytes.slice(start as usize..end as usize)))));
+        return Ok(once(ready(Ok(bytes.slice(start as usize..end)))));
     }
 
     Err(UploadError::Range.into())

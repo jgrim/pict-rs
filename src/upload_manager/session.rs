@@ -89,7 +89,7 @@ where
                             debug!("Remove hash/id -> alias mapping");
                             let id = String::from_utf8_lossy(&id);
                             let key = alias_key(&hash, &id);
-                            let _ = manager.inner.main_tree.remove(&key);
+                            let _ = manager.inner.main_tree.remove(key);
                         }
 
                         let _ = manager.check_delete_files(store, hash).await;

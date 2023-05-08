@@ -1,5 +1,6 @@
 use crate::error::Error;
 use actix_web::web;
+use base64::engine::{Engine, general_purpose::STANDARD};
 use sha2::{digest::FixedOutputReset, Digest};
 use std::{
     pin::Pin,
@@ -79,7 +80,7 @@ where
 
 impl std::fmt::Debug for Hash {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "{}", base64::encode(&self.inner))
+        write!(f, "{}", STANDARD.encode(&self.inner))
     }
 }
 
